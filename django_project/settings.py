@@ -47,6 +47,18 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+INSTALLED_APPS += [
+    'cloudinary',
+    'cloudinary_storage'   
+]
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.getenv('CLOUD_NAME'),
+    'API_KEY': os.getenv('CLOUD_API_KEY'),
+    'API_SECRET': os.getenv('CLOUD_API_SECRET'),
+}
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -157,3 +169,6 @@ print(DEFAULT_FROM_EMAIL)
 print(ANYMAIL)
 
 ANYMAIL_IGNORE_UNSUPPORTED_FEATURES = False
+
+
+
